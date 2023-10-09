@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.61);
+            width: 500px;
+            padding: 10px;
+            border-radius: 20px;
+            
+            
+
+        }
+
+        body h1 {
+            background-color: white;
+            max-width: 300px;
+            border-radius: 20px;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .texto {
+            font-size: 2rem;
+            
+            font-weight: bold;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 20px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        #txtvel {
+            width: 400px;
+            text-align: center;
+            border-radius: 20px;
+            border: none;
+            height: 50px;
+            
+        }
+        #res {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 30px;
+            border-radius: 20px;
+            font-family: arial;
+            font-size: 1.40rem;
+            background-color: white;
+            height: 300px;
+            width: 300px;
+            max-width: 300px;
+            max-height: 140px;
+            padding: 10px;
+
+
+        }
+
+        input {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+   <div class="container">
+       <span class="texto">Velocidade do carro</span> <input type="number" name="txtvel" id="txtvel" placeholder="digite aqui a velocidade do carro">
+       
+       <input type="button" value="verificar" onclick="calcular()">
+       <div id="res"></div>
+       
+   </div>
+   <script>
+      
+
+       function calcular () {
+        var txtv = window.document.getElementById('txtvel')
+        var res = window.document.getElementById('res')
+        var vel = Number(txtv.value)
+        res.innerHTML = `Sua velocidade atual é de <strong>${vel}km/h</strong>`
+        res.innerHTML += `<p> Dirija sempre com sinto de segurança!!!!</p>`
+
+        if (vel > 80) {
+            res.innerHTML = "Voce será multado"
+        }
+
+       }
+   </script>
+</body>
+</html>
